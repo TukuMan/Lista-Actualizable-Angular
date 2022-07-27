@@ -1,18 +1,18 @@
-<div>
-    <div>
-        <input type="checkbox" checked="checked">
+<div class="row">
+    <div class="title">
+        <input type="checkbox" [checked]="item.completed">
         {{ item.title }}
     </div>
-    <div>
-        {{item.price}}
+    <div class="price">
+        {{item.price | currency }}
     </div>
-    <div>
+    <div class="quantity">
         {{item.quantity }}
     </div>
-    <div>
-        {{(item.price * item.quantity)}}
+    <div class="total">
+        {{(item.price * item.quantity | currency)}}
     </div>
-    <div>
-        <button>Eliminar</button>
+    <div class="action">
+        <button (click)="onDelete(item)">Eliminar</button>
     </div>
 </div>
